@@ -3,5 +3,7 @@ import type { Config } from "@react-router/dev/config"
 export default {
   ssr: true,
 
-  prerender: ["/", "/about", "/posts", "/posts/1", "/posts/2"],
+  async prerender({ getStaticPaths }) {
+    return ["/", "/about", "/posts"].concat([1, 2].map((id) => `/posts/${id}`))
+  },
 } satisfies Config
