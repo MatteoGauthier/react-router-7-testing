@@ -1,9 +1,7 @@
 import type { Config } from "@react-router/dev/config"
 
 export default {
-  // Config options...
-  // Server-side render by default, to enable SPA mode set this to `false`
-  ssr: false,
+  ssr: true,
 
-  prerender: true,
+  prerender: ["/", "/about", "/posts", "/posts/1", "/posts/2"],
 } satisfies Config
